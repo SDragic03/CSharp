@@ -3,8 +3,11 @@
 // Also, with structs you are not dealing with references like classes but instead are working directly with the struct instance
 // When you pass a struct to a function it is by value instead of as a reference
 
-//All struct constructors have to take at least one parameter
-//  THERE IS MORE TO WRITE!!!!
+// All struct constructors have to take at least one parameter
+// A struct cannot inherit from other classes or structs
+// Classes cannot inherit from structs
+// A struct can implement custom interfaces
+// THERE IS MORE TO WRITE!!!!
 
 namespace Structs
 {
@@ -38,7 +41,7 @@ namespace Structs
             return "This car is " + Color;
         }
 
-        public string color
+        public string Color
         {
             get { return _color; }
             set { _color = value }
