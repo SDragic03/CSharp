@@ -1,6 +1,6 @@
-Abstract class - a base class that cannot be instantiated, instead you have to subclass them and create an instance of your subclass.
-    - No object of this class can be instantiated but can make derivations of this
-    - Great for frameworks
+//Abstract class - a base class that cannot be instantiated, instead you have to subclass them and create an instance of your subclass.
+    //- No object of this class can be instantiated but can make derivations of this
+    //- Great for frameworks
 
 namespace AbstractClasses
 {

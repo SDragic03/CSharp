@@ -3,17 +3,20 @@
     //- A static class may only contain static members (functions and fields)
     //- There is only one verson of a static class!!!!
 
+//Common use for static classes are for "Utility Helper" classes
+
 //NonStatic - Is like a regular class
     // Nonstatic class can have both static and non static members
     // Can be instantiated but you cant use a static member on an object of the class
 
+// Static implementation
 namespace StaticVsNonStatic
 {
     class Program
     {
-        static void Main(string[] args) 
+        static void main(string[] args) 
         {
-            Console.Writeline("The area is: " + Rectangle.CalculateArea(5, 4));
+            console.writeline("the area is: " + rectangle.calculatearea(5, 4));
 
         }
     }

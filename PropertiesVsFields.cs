@@ -13,7 +13,7 @@ namespace Properties
     {
         private string _color;
 
-        public string Color
+        public string BlueColor
         {
             get 
             {
@@ -33,6 +33,8 @@ namespace Properties
 }
 
 // Fields/Variables
+    // A variable or field is pretty much a storage room
+    // declared by: <datetype> <name>;
 
 namespace Fields
 {
