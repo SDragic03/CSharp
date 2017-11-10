@@ -1,9 +1,6 @@
-// NEED TO PERSONALIZE THIS - THIS IS COPY PASTA
+// Object Initializers - syntactical sugar that allows you to initialize an object and have access to all of the public properties of the class simply by using the new keyword and a set of {}
 
-https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers
-
-// The following code consolidates examples from the topic.
-class ObjInitializers
+class ObjectInitializers
 {
     class Dog
     {
@@ -18,20 +15,20 @@ class ObjInitializers
 
         List<Dog> dogs = new List<Dog>
         {
-            new Dog(){ Name = "Jacks", Age= 8 },
-            new Dog(){ Name = "Cloyee", Age= 2 },
-            new Dog(){ Name = "Sasha", Age= 14 }
+            new Dog(){ Name = "Jacks", Age = 8 },
+            new Dog(){ Name = "Cloyee", Age = 2 },
+            new Dog(){ Name = "Sasha", Age = 14 }
         };
 
         List<Cat> moreCats = new List<Cat>
         {
-            new Dog(){ Name = "Oliver", Age= 5 },
-            new Dog(){ Name = "Peaches", Age= 4 },
+            new Dog(){ Name = "Oliver", Age = 5 },
+            new Dog(){ Name = "Peaches", Age = 4 },
             null
         };
 
         // Display results.
-        System.Console.WriteLine(cat.Name);
+        System.Console.WriteLine(dog.Name);
 
         foreach (Dog d in dogs)
             System.Console.WriteLine(d.Name);
@@ -43,3 +40,9 @@ class ObjInitializers
                 System.Console.WriteLine("List element has null value.");
     }
 }
+
+// Array Initializers
+
+var stringArray = new string[3]; // creates array of length 3, default values
+var stringArray = new string[] { "A", "B" }; // creates populated array of length 2
+string[] stringArray = { "A", "B" }; // creates populated array of length 2
