@@ -1,25 +1,27 @@
 // Extension methods enable you to add methods to existing types (string, int, etc)
 
-namespace ExtensionMethods
+using System;
+
+namespace Extensions
 {
-    public static class IntegerExtensions
+    public class Program
     {
-        public static int StringToIntConverter(this string str)
+        public static void Main(string[] args)
         {
-            return Int32.Parse(str);
+            var myString = "10";
+
+            var num = myString.StringToIntConverter();
+            
+            Console.WriteLine($"Output: {num}");
+            Console.ReadKey();
         }
     }
 
-    class Program
+    public static class Extensions
     {
-        static void Main(string[] args)
+        public static int StringToIntConverter(this string str)
         {
-            string _str = "10";
-
-            int num = str.StringToIntConverter(); // Should be var instead of int ... DOUBLE CHECK
-
-            Console.WriteLine($"Output: {num}");
-            Console.ReadLine();
+            return int.Parse(str);
         }
     }
 }

@@ -4,51 +4,48 @@
     // A class can implement multiple intefaces
 
 
-namespace Interfaces
+using System;
+
+namespace code_tester
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var lions = new List<Dog>();
-
-            lions.Add(new Lion("Max"));
-            lions.Add(new Lion("Jack"));
-            lions.Add(new Lion("Jerry"));
-
-            lions.Sort();
-
-            foreach (Lion lion  in lions) 
-                Console.Writeline(lion.Describe());
+            var t1 = new Transaction("001", "11/05/2017", 75000.00);
+            var t2 = new Transaction("002", "11/15/2017", 550000.00);
+            
+            t1.ShowTransaction();
+            t2.ShowTransaction();
             Console.ReadKey();
         }       
     }
 
-    public class Lion : IAnimal, IComparable
-    {
-        private string _name;
+    public interface ITransactions {
+        // interface members
+        void ShowTransaction();
+        double GetAmount();
+    }
+   
+    public class Transaction : ITransactions {
+        private readonly string _id;
+        private readonly string _date;
+        private readonly double _amount;
 
-        public Dog(string name)
-        {
-            this.Name = name;
+        public Transaction(string id, string date, double amount) {
+            _id = id;
+            _date = date;
+            _amount = amount;
         }
-
-        public string Describe()
-        {
-            return "Hello, I'm a lion and my name is " + this.Name;
+      
+        public double GetAmount() {
+            return _amount;
         }
-
-        public int CompareTo(object obj)
-        {
-            if (obj is IAnimal)
-                return this.Name.CompareTo(obj as IAnimal).Name)
-            return 0;
-        }
-
-        public string Name 
-        {
-            get { return _name; } 
-            set { _name = value; }
+      
+        public void ShowTransaction() {
+            Console.WriteLine($"Transaction: {_id}");
+            Console.WriteLine($"Date: {_date}");
+            Console.WriteLine($"Amount: {GetAmount()}");
         }
     }
 }

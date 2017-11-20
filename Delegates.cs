@@ -11,17 +11,50 @@ delegate <return type> <delegate-name> <parameter list>
 
 // Once declared 
 
-class Program
+using System;
+
+namespace code_tester
 {
-    Delegate void MyDelegate (string value);
-
-    static void Main(string[] args)
+    public class Program
     {
-        // Specify delegate with lambda expression
-        MyDelegate MyDelegate = v => Console.Writeline(v);
+        private delegate string UppercaseDelegate(string value);
 
-        MyDelegate.Invoke("dog");
+        public static void Main(string[] args)
+        {
+            WriteOutput("dog", new UppercaseDelegate(UppercaseFirst));
+            WriteOutput("dog", new UppercaseDelegate(UppercaseLast));
+            WriteOutput("dog", new UppercaseDelegate(UppercaseAll));
+
+            WriteOutput("dog", new UppercaseDelegate(x => x.ToUpper()));
+
+            Console.ReadKey();
+        }
+
+        private static string UppercaseFirst(string input)
+        {
+            var buffer = input.ToCharArray();
+
+            buffer[0] = char.ToUpper(buffer[0]);
+            return new string(buffer);
+        }
+
+        private static string UppercaseLast(string input)
+        {
+            var buffer = input.ToCharArray();
+
+            buffer[buffer.Length - 1] = char.ToUpper(buffer[buffer.Length - 1]);
+            return new string(buffer);
+        }
+
+        private static string UppercaseAll(string input)
+        {
+            return input.ToUpper();
+        }
+
+        private static void WriteOutput(string input, UppercaseDelegate del)
+        {
+            Console.WriteLine($"Your string before: {input}");
+            Console.WriteLine($"Your string after: {del(input)}");
+        }
     }
 }
-
-// https://www.dotnetperls.com/delegate

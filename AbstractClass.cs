@@ -2,33 +2,65 @@
     //- No object of this class can be instantiated but can make derivations of this
     //- Great for frameworks
 
-namespace AbstractClasses
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var lion = new Lion();
-            Console.Writeline(lion.describe);
-            Console.ReadKey();
-        }
-    }
+using System;
 
-    abstract class FourLeggedAnimal
+namespace AbstractClass
+{
+    public abstract class FourLeggedAnimal
     {
         public virtual string Describe()
         {
-            return "This animal has four legs!";
+            return "This animal has four legs! ";
         }
     }
 
-    class Lion : FourLeggedAnimal
+    public class Lion : FourLeggedAnimal
     {
-        public overrride string Describe()
+        public override string Describe()
         {
             var result = base.Describe();
-            result += " In fact, it's a lion!";
+            
+            result += "In fact, it is a Lion!";
             return result;
+        }
+    }
+
+    public class Cheetah : FourLeggedAnimal
+    {
+        public override string Describe()
+        {
+            var result = base.Describe();
+            
+            result += "In fact, it is a Cheetah!";
+            return result;
+        }
+    }
+
+    public class Tiger : FourLeggedAnimal
+    {
+        public override string Describe()
+        {
+            var result = base.Describe();
+            
+            result += "In fact, it is a Tiger!";
+            return result;
+        }
+    }
+    
+    public static class Program
+    {
+        public static void Main(string[] args)
+        {
+            //var FourLeggedAnimal = new FourLeggedAnimal(); // cannot create an instance of a abstract class
+
+            var lion = new Lion();
+            var cheetah = new Cheetah();
+            var tiger = new Tiger();
+            
+            Console.WriteLine(lion.Describe());
+            Console.WriteLine(cheetah.Describe());
+            Console.WriteLine(tiger.Describe());
+            Console.ReadKey();
         }
     }
 }

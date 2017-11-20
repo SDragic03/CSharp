@@ -1,43 +1,49 @@
 // Object Initializers - syntactical sugar that allows you to initialize an object and have access to all of the public properties of the class simply by using the new keyword and a set of {}
 
-class ObjectInitializers
+using System;
+using System.Collections.Generic;
+
+namespace ObjAndArrayInit 
 {
-    class Dog
+    class Program
     {
-        // Auto-implemented properties.
-        public int Age { get; set; }
-        public string Name { get; set; }
-    }
-
-    static void Main()
-    {
-        Dog dog = new Dog { Age = 10, Name = "Max" };
-
-        List<Dog> dogs = new List<Dog>
+        class Dog
         {
-            new Dog(){ Name = "Jacks", Age = 8 },
-            new Dog(){ Name = "Cloyee", Age = 2 },
-            new Dog(){ Name = "Sasha", Age = 14 }
-        };
+            // Auto-implemented properties.
+            public int Age { get; set; }
+            public string Name { get; set; }
+        }
 
-        List<Cat> moreCats = new List<Cat>
+        static void Main()
         {
-            new Dog(){ Name = "Oliver", Age = 5 },
-            new Dog(){ Name = "Peaches", Age = 4 },
-            null
-        };
+            var dog = new Dog { Age = 10, Name = "Max" };
 
-        // Display results.
-        System.Console.WriteLine(dog.Name);
+            var dogs = new List<Dog>
+            {
+                new Dog { Name = "Jacks", Age = 8 },
+                new Dog { Name = "Cloyee", Age = 2 },
+                new Dog { Name = "Sasha", Age = 14 }
+            };
 
-        foreach (Dog d in dogs)
-            System.Console.WriteLine(d.Name);
+            var moreDogs = new List<Dog>
+            {
+                new Dog { Name = "Oliver", Age = 5 },
+                new Dog { Name = "Peaches", Age = 4 },
+                null
+            };
 
-        foreach (Dog d in moreDogs)
-            if (d != null)
-                System.Console.WriteLine(d.Name);
-            else
-                System.Console.WriteLine("List element has null value.");
+            // Display results.
+            Console.WriteLine(dog.Name);
+
+            foreach (var d in dogs)
+            {
+                Console.WriteLine($"Dogs name: {d.Name}");
+                Console.WriteLine($"Dogs age: {d.Age}");
+            }
+
+            foreach (var d in moreDogs)
+                Console.WriteLine(d != null ? $"Dogs name: {d.Name}" : "List element has null value.");
+        }
     }
 }
 
