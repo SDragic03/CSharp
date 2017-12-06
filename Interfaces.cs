@@ -1,4 +1,4 @@
-// An interface is a contract - a class that implements it is required to implement all of the methods and properties.
+// An interface is a contract
     // A interface can have methods, properties, indexers and events
     // access modifiers are not allowed inside of an interface, they are all public by default
     // A class can implement multiple intefaces
@@ -55,6 +55,15 @@ namespace code_tester
     }
 }
 
-// Explicit implementation .................................................................
-    // STILL NEED
-
+// Explicit implementation
+public class ExampleClass : IFirstInterface, ISecondInterface
+{
+    void IFirstInterface.SampleMethod()
+    {
+        System.Console.WriteLine("Functionality from IFirstInterface.SampleMethod");
+    }
+    void ISecondInterface.SampleMethod()
+    {
+        System.Console.WriteLine("Functionality from ISecondInterface.SampleMethod");
+    }
+}
