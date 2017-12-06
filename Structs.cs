@@ -7,7 +7,6 @@
 // A struct cannot inherit from other classes or structs
 // Classes cannot inherit from structs
 // A struct can implement custom interfaces
-// THERE IS MORE TO WRITE!!!!
 
 namespace Structs
 {
@@ -15,13 +14,11 @@ namespace Structs
     {
         static void Main(string[] args)
         {
-            Car car;
-
-            car = new Car("Red");
-            Console.Writeline(car.Describe());
+            var car = new Car("Red");
+            Console.WriteLine(car.Describe());
 
             car = new Car("Blue");
-            Console.Writeline(car.Describe());
+            Console.WriteLine(car.Describe());
 
             Console.ReadKey();
         }
@@ -41,10 +38,6 @@ namespace Structs
             return "This car is " + Color;
         }
 
-        public string Color
-        {
-            get { return _color; }
-            set { _color = value }
-        }
+        public string Color { get; set; }
     }
 }

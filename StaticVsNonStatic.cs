@@ -16,11 +16,18 @@ namespace StaticVsNonStatic
     {
         static void main(string[] args) 
         {
-            console.writeline("the area is: " + rectangle.calculatearea(5, 4));
+            // Example 1:
+            Console.WriteLine("The area is: " + Rectangle.CalculateArea(5, 4));
 
+            // Example 2:
+            var rectangle = new Rectangle(4, 5);
+            rectangle.OutputArea();
+
+            Console.ReadKey();
         }
     }
 
+    // Static class example:
     public static class Rectangle
     {
         public static int CalculateArea(int width, int height)
@@ -31,27 +38,24 @@ namespace StaticVsNonStatic
 }
 
     // Mixing static with non static members
-    namespace StaticVsNonStatic
+    public class Rectangle
     {
-        public class Rectangle
+        private int _width;
+        private int _height;
+
+        public Rectangle(int width, int height)
         {
-            private int _width;
-            private int _height;
+            _width = width;
+            _height = height;
+        }
 
-            public Rectangle(int width, int height)
-            {
-                _width = width;
-                _height = height;
-            }
+        public void OutputArea()
+        {
+            Console.WriteLine($"Area output: {CalculateArea(_width, _height)}");
+        }
 
-            public void OutputArea()
-            {
-                Console.Writeline("Area output: " Rectangle.CalculateArea(_width, _height));
-            }
-
-            public static int CalculateArea(int width, int height)
-            {
-                return width * height;
-            }
+        public static int CalculateArea(int width, int height)
+        {
+            return width * height;
         }
     }

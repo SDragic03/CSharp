@@ -42,18 +42,19 @@ namespace Fields
     {
         static void Main(string[] args)
         {
-            string _firstName = "Bob";
-            string _lastName = "Fancis";
+            var _firstName = "Bob";
+            var _lastName = "Francis";
 
-            Console.Writeline("Name: " + _firstName + " " + _lastName);
+            Console.WriteLine("Name: " + _firstName + " " + _lastName);
 
-            Console.Writeline("Please enter a new name:");
+            Console.WriteLine("Please enter a new first name:");
+            _firstName = Console.ReadLine();
 
-            _firstName = Console.Readline();
-            _lastName = Console.Readline();
+            Console.WriteLine("Please enter a new last name:");
+            _lastName = Console.ReadLine();
 
-            Console.Writeline("Your new name is: " + _firstName + " " + _lastName):
-            Console.Readline(;)
+            Console.WriteLine("Your new name is: " + _firstName + " " + _lastName);
+            Console.ReadLine();
         }
     }
 }

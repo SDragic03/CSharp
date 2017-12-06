@@ -12,8 +12,8 @@ namespace code_tester
     {
         static void Main(string[] args)
         {
-            var t1 = new Transaction("001", "11/05/2017", 75000.00);
-            var t2 = new Transaction("002", "11/15/2017", 550000.00);
+            ITransaction t1 = new Transaction("001", "11/05/2017", 75000.00);
+            ITransactions t2 = new Transaction("002", "11/15/2017", 550000.00);
             
             t1.ShowTransaction();
             t2.ShowTransaction();
@@ -21,28 +21,33 @@ namespace code_tester
         }       
     }
 
-    public interface ITransactions {
+    public interface ITransactions 
+    {
         // interface members
         void ShowTransaction();
         double GetAmount();
     }
    
-    public class Transaction : ITransactions {
+    public class Transaction : ITransactions 
+    {
         private readonly string _id;
         private readonly string _date;
         private readonly double _amount;
 
-        public Transaction(string id, string date, double amount) {
+        public Transaction(string id, string date, double amount) 
+        {
             _id = id;
             _date = date;
             _amount = amount;
         }
       
-        public double GetAmount() {
+        public double GetAmount() 
+        {
             return _amount;
         }
       
-        public void ShowTransaction() {
+        public void ShowTransaction() 
+        {
             Console.WriteLine($"Transaction: {_id}");
             Console.WriteLine($"Date: {_date}");
             Console.WriteLine($"Amount: {GetAmount()}");
