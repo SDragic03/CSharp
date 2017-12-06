@@ -18,14 +18,13 @@ namespace code_tester
     public class Program
     {
         private delegate string UppercaseDelegate(string value);
-
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             WriteOutput("dog", new UppercaseDelegate(UppercaseFirst));
-            WriteOutput("dog", new UppercaseDelegate(UppercaseLast));
-            WriteOutput("dog", new UppercaseDelegate(UppercaseAll));
+            WriteOutput("dog", UppercaseLast);
+            WriteOutput("dog", UppercaseAll);
 
-            WriteOutput("dog", new UppercaseDelegate(x => x.ToUpper()));
+            WriteOutput("dog", x => x.ToUpper());
 
             Console.ReadKey();
         }
@@ -55,6 +54,6 @@ namespace code_tester
         {
             Console.WriteLine($"Your string before: {input}");
             Console.WriteLine($"Your string after: {del(input)}");
-        }
+        }    
     }
 }
