@@ -11,6 +11,7 @@ namespace Extensions
             var myString = "10";
 
             var num = myString.StringToIntConverter();
+            var num = Extensions.StringToIntConverter(myString);
             
             Console.WriteLine($"Output: {num}");
             Console.ReadKey();

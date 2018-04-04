@@ -59,3 +59,10 @@ namespace StaticVsNonStatic
             return width * height;
         }
     }
+    
+-- Static vs. Non-static
+- Solidify knowledge about instance vs static. Why can’t a static method access an instance field?
+
+--Bitwise operations
+- Look at flags enums*/
+    

@@ -17,6 +17,7 @@ namespace ObjAndArrayInit
         static void Main()
         {
             var dog = new Dog { Age = 10, Name = "Max" };
+            
 
             var dogs = new List<Dog>
             {

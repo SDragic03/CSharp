@@ -45,3 +45,10 @@ Console.WriteLine(invertOperator); // ~101 = 11111111111111111111111111111010
 Console.ReadKey();
 // Basically inverts the bits
 // Since the example above is an int = 32 bits, the 29 0's will invert to 1's
+
+
+// Look into Enum flags: 
+
+/*-- Abstract class
+    - Why would you use an abstract class instead of an interface?
+    - Why would you use an abstract class instead of a regular class?

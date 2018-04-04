@@ -57,3 +57,8 @@ namespace code_tester
         }    
     }
 }
+
+// Func and Action look into that
+/*-- Abstract class
+    - Why would you use an abstract class instead of an interface?
+    - Why would you use an abstract class instead of a regular class?

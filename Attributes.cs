@@ -20,3 +20,10 @@ public class Class
 [Obsolete (message)]
 [Conditional("DEBUG")]
 [AttributeUsage]
+
+
+// Write a custom attribute
+
+//-- Attributes
+//- Create a custom attribute and show some things you can do with it
+//- Why would you use an attribute instead of something else?    

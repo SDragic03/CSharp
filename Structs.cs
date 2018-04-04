@@ -40,4 +40,14 @@ namespace Structs
 
         public string Color { get; set; }
     }
+
+    // struct and copy ...
+
+    // Stack vs heap 
+
+    // Copy of it
+    
+/*-- Abstract class
+- Why would you use an abstract class instead of an interface?
+- Why would you use an abstract class instead of a regular class?
 }
